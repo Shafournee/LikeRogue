@@ -79,6 +79,7 @@ public class PlayerShooting : MonoBehaviour
         Vector2 pos = new Vector2(transform.position.x, transform.position.y);
         GameObject newBullet = Instantiate(bullet, pos + bulletSpawnPos, Quaternion.identity);
         newBullet.GetComponent<Rigidbody2D>().velocity = bulletVel * bulletSpeed;
+        newBullet.transform.parent = gameObject.transform;
 
 
         // Wait for the player to be able to shoot the next bullet
